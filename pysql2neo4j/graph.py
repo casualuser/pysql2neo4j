@@ -45,7 +45,7 @@ CREATE (src)-[:%s%s]->(dest)"""
             if OFFLINE_MODE:
                 CYPHER_STREAM.write(statement)
             else:
-                self.graphDb.cypher.execute(statement)
+                self.graphDb.run(statement)
 
     def importTableCsv(self, tableObj):
         '''Imports a table to Neo4j.'''
